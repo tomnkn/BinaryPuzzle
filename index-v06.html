@@ -1,6 +1,5 @@
-﻿<!--  Binary Puzzle v05 - Renamed all "Board" text boxes -->
-<!--  29/04/20, Tom Nguyen, board cells renamed with a "B" for board, then column digit, row digit. Load code improved but still repeats 6 times. -->
-<!-- Note: Also fixed the problem of the border grid lines being thinner than the inner lines  -->
+﻿<!-- Binary Puzzle v06 - Loop the grunt load - Loop has 2 nested loops with variables for row (j) and column (i) -->
+<!-- 4/05/20, Tom Nguyen,   -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,27 +12,13 @@
         var G3 = [null, null, 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
 
         function LoadGrid(G) {                    // sets the initial problem
-            var Row = 6; //set the board size
-            var Col = 6;
+            var Row = 6; //set the number of rows   
+            var Col = 6; //set the number of columns
             var Grid = [];
 
-            for (let i = 0; i < Row; i++) {
-                document.getElementById('B' + (i + 1) + '1').value = G[i]; //loop for row A
-            }
-            for (let i = 0; i < Row; i++) {
-                document.getElementById('B' + (i + 1) + '2').value = G[Col + i]; //elements 7 - 12
-            }
-            for (let i = 0; i < Row; i++) {
-                document.getElementById('B' + (i + 1) + '3').value = G[2 * Col + i]; //elements 3 - 18
-            }
-            for (let i = 0; i < Row; i++) {
-                document.getElementById('B' + (i + 1) + '4').value = G[3 * Col + i];
-            }
-            for (let i = 0; i < Row; i++) {
-                document.getElementById('B' + (i + 1) + '5').value = G[4 * Col + i];
-            }
-            for (let i = 0; i < Row; i++) {
-                document.getElementById('B' + (i + 1) + '6').value = G[5 * Col + i];
+            for (let j = 0; j < Row; j++) { //Row loop - like the y coordinates
+                for (let i = 0; i < Col; i++) //Col loop - like the x coordinates
+                    document.getElementById('B' + (i + 1) + (j + 1)).value = G[j * Col + i]; //Nested loops
             }
         }
 
