@@ -1,0 +1,95 @@
+﻿* {
+    padding: 0;
+    border-collapse: collapse;
+    font-family: Arial;
+    text-align: center;
+}
+
+.gameboard {
+    width: 55px;
+    height: 55px;
+    font-size: 32px;
+    font-family: Arial;
+    color: #000000;
+    vertical-align: middle;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid #007acc; /* BLUE */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea {
+    font-family: Arial;
+    text-align: left;
+    font-size: 14px;
+    resize: none;
+    border-radius: 4px;
+    background-color: #f0fdff;
+    padding: 5px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input[type="button"] {
+    background-color: #007acc; /* BLUE */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.topb {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.botb {
+    padding-bottom: 10px;
+}
+
+input[type="button"]:hover {
+    background-color: #023d6e; /*DARK BLUE*/
+}
+
+input[type="button"]:focus {
+    outline: none;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+
+#cboPuzNo {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 4px;
+    background-color: #f0fdff;
+}
+
+#cboPuzNo:focus {
+    outline: none;
+}
+
+#viewlabel {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.gridload {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p {
+    font-style: italic;
+    font-size: 18px;
+}
