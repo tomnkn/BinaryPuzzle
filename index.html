@@ -1,10 +1,10 @@
-﻿<!-- Binary Puzzle v14 - Code Complete Button -->
-<!-- 24/05/20, Tom Nguyen, Code the 'Complete' button.    -->
+﻿<!-- Binary Puzzle v15 - Code The SolveOnce Button -->
+<!-- 24/05/20, Tom Nguyen, Code the 'Solve Once' button. 2nd last version.     -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>V14 Binary Puzzle 6x6</title>
+    <title>V15 Binary Puzzle 6x6</title>
     <style type="text/css">
         /* 30/7/19 Rain Holloway - to eliminate double lines */
         * {
@@ -88,12 +88,15 @@
             }
         }
         function SolvePuzzle(G2D) { //See structure chart for what goes here 
-            if (G2D[0][1] == 1) {
-                window.alert('Sub "SolvePuzzle" TEST MSG ONLY - 1 in row 1 col 2 - "solved". ');
+            SolveNumberPairs();
+            SolveNumberTrios();
+            if (CompleteRowsCols()) { //returns true or false
+                //window.alert('Sub "SolvePuzzle" TEST MSG ONLY - 1 in row 1 col 2 - "solved". ');
                 return true;
+            } else {
+                //window.alert('Sub "SolvePuzzle" TEST MSG ONLY - "NOT solved yet"!');
+                return false;
             }
-            window.alert('Sub "SolvePuzzle" TEST MSG ONLY - "NOT solved yet"!');
-            return false;
         }
         function SolveNumberPairs() { // call row and column, will take two pushes of the button to update all vertical and horizontal row pairs
             SolveRowPairs();
@@ -218,7 +221,7 @@
     <!--Parameter for initial load can be changed manually-->
     <form id="input">
         <h1>6x6 Binary Puzzle Game</h1>
-        <h2>V14: Code the Complete button.</h2>
+        <h2>V15: Code the SolveOnce button.</h2>
         <p>Return to <a href="index.html">home</a>:</p>
         LOAD a grid: 
          <select id="cboPuzNo" onchange="LoadGrid(eval(value))">
